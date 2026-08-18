@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vittarier - Saúde e Bem Estar</title>
+    <meta name="description" content="Vittarier oferece serviços de saúde e bem-estar: atendimento domiciliar, programas para empresas e academias, eventos esportivos e consultórios especializados.">
+    <meta name="keywords" content="saúde, bem-estar, clínica, consultório, atendimento domiciliar, fitness, nutrição, dermatologia, ginecologia, obstetrícia">
+    <meta name="author" content="Vittarier">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vittarier.com.br">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #b3d9ff;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            gap: 40px;
+        }
+        
+        .logo img {
+            display: block;
+            width: 150px;
+            max-width: 100%;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        .nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .nav a:hover {
+            color: #00a8e8;
+        }
+        
+        .icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .icons a {
+            transition: transform 0.3s;
+        }
+
+        .icons a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #00a8e8 0%, #006bb3 100%);
+            color: white;
+            padding: 100px 40px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background-color: #fff;
+            color: #00a8e8;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .hero button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 40px;
+            background-color: #ffffff;
+            margin: 50px 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #00a8e8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: #f0f8ff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            color: #00a8e8;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 40px;
+            background-color: #e6f2ff;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #00a8e8;
+        }
+
+        .about p {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 40px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #00a8e8;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .contact-button {
+            background-color: #00a8e8;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #006bb3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #00a8e8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+
+            .nav ul {
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="https://www.instagram.com/vittarier/" class="logo" target="_blank" rel="noopener noreferrer" aria-label="Vittarier no Instagram">
+            <img src="https://i.ibb.co/DHxJyWdK/logo-1.jpg" alt="logo-1">
+        </a>
+        
+        <nav class="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Vittarier - Saúde em Todos os Lugares</h1>
+        <p>Atendimento domiciliar, empresas, academias, eventos e consultórios - saúde e bem-estar onde você estiver</p>
+        <button onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Conheça Nossos Serviços</button>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>Sobre a Vittarier</h2>
+        <p>A Vittarier é uma empresa pioneira dedicada ao bem-estar integral e à transformação da saúde das pessoas. Com uma abordagem completa e integrada, oferecemos soluções inovadoras que cobrem todas as dimensões da saúde: física, mental, nutricional e emocional.</p>
+        
+        <p>Nossa missão é transformar vidas através de programas personalizados e atendimentos especializados, promovendo hábitos saudáveis e qualidade de vida para todos os nossos clientes. Contamos com uma equipe multidisciplinar de profissionais altamente qualificados e certificados nas áreas de cardiologia, dermatologia, ginecologia, obstetrícia, nutrição e terapias holísticas.</p>
+        
+        <p>Na Vittarier, acreditamos que a saúde é um direito de todos e que cada pessoa merece um atendimento humanizado, respeitoso e personalizado. Por isso, desenvolvemos planos de cuidado individualizados que consideram as particularidades, objetivos e necessidades específicas de cada cliente. Nossos profissionais trabalham em conjunto para garantir resultados efetivos e duradouros.</p>
+        
+        <p>Com anos de experiência no mercado de saúde e bem-estar, a Vittarier se posiciona como referência em excelência de atendimento, inovação em tratamentos e dedicação genuína ao bem-estar de seus clientes. Venha fazer parte da nossa comunidade e iniciar sua jornada transformadora rumo a uma vida mais saudável e plena.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>Nossos Serviços</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🏠 Atendimento em Domicílio</h3>
+                <p>Serviços de saúde e bem-estar na comodidade da sua casa, com profissionais qualificados trazendo excelência até você.</p>
+            </div>
+            <div class="service-card">
+                <h3>🏢 Empresas e Academias</h3>
+                <p>Programas corporativos de saúde e fitness para empresas e academias, promovendo bem-estar e produtividade.</p>
+            </div>
+            <div class="service-card">
+                <h3>🏃 Eventos Esportivos</h3>
+                <p>Apoio médico e orientação de bem-estar para eventos esportivos, garantindo saúde e segurança dos participantes.</p>
+            </div>
+            <div class="service-card">
+                <h3>🏥 Clínicas e Consultórios</h3>
+                <p>Atendimento especializado em nossas clínicas e consultórios com infraestrutura completa e profissionais experientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Entre em Contato</h2>
+        <p>Pronto para começar sua jornada de bem-estar?</p>
+        <p>📞 (79) 8160-2142 | 📧 contato@vittarier.com.br | 📱 @vittarier</p>
+        <a href="https://wa.me/message/TCUFWAZHEHYIF1" target="_blank" class="contact-button">Agende uma Avaliação</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Vittarier - Saúde e Bem Estar. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
